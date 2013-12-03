@@ -4,8 +4,13 @@
   "description": "",
   "version": "0.0.1",
   "keywords": [],
-  "dependencies": {},
-  "development": {},
+  "dependencies": {
+    "component/delegate": "*"
+  },
+  "development": {
+    "bredele/view" : "*",
+    "bredele/store" : "*"
+  },
   "license": "MIT",
   "main": "index.js",
   "scripts": [
