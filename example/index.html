@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Control plugin</title>
+	<style>
+	  .active {
+	  	background:red;
+	  }
+
+		.green {
+			background:#16a085;
+			color:white;
+		}
+
+		.orange {
+			background:#f39c12;
+			color:white;	
+		}
+
+	</style>
+</head>
+<body>
+	<h4>Radio</h4>
+	<div class="toolbar" data-control="radio:click .btn,    active     popup">
+		<div class="btn">button 1</div>
+		<div class="btn">button 2</div>
+		<div class="btn">button 3</div>				
+	</div>
+	<h4>Click on 'Teacher'</h4>
+	<ul data-control="toggle:click .teacher, green popup">
+		<li class="teacher">Teacher</li>
+		<li class="teacher">Teacher</li>
+		<li class="student">Student</li>
+		<li class="student">Student</li>
+		<li class="teacher">Teacher</li>
+		<li class="teacher">Teacher</li>
+		<li class="student">Student</li>
+	</ul>
+	<h4>Click on 'Lego'</h4>
+	<ul data-control="toggle:click .lego, orange popup">
+		<li class="lego">lego</li>
+		<li class="lego">lego</li>
+		<li class="bredele">bredele</li>
+		<li class="bredele">bredele</li>
+		<li class="lego">lego</li>
+		<li class="lego">lego</li>
+		<li class="bredele">bredele</li>
+	</ul>
+	<script src="../build/build.js"></script>
+	<script>
+	  var lego = require('lego');
+	  var view = lego(document.body);
+
+	  var controller = require('control-brick')({
+	    	popup: function() {
+	    		console.log('hello github!');
+	    	}
+	    });
+
+	  lego(document.body)
+	    .add('data-control', controller)
+	    .build();
+	</script>
+</body>
+</html>
