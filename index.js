@@ -1,4 +1,5 @@
-var events = require('delegate');
+var events = require('events-brick'),
+    classes = require('classes');
 
 /**
  * Expose 'Control'
@@ -12,30 +13,35 @@ module.exports = Control;
  * @api public
  */
 
-function Control(scope) {
-	this.scope = scope;
+function Control(scope, touch) {
+	this.events = events(scope, touch);
 	this.current = null;
 }
 
 
-Control.prototype.toggle = function(node, selector, type, callback, capture) {
-	var _this = this;
-	events.bind(node, selector, type, function(e){
-		e.target.classList.toggle('active');
-		_this.scope[callback].call(_this.scope, node);
-	}, (capture === 'true'));
+Control.prototype.toggle = function(node, selector, callback, capture) {
+	this.events.on(node, selector, callback, capture);
+	// var _this = this;
+	// events.bind(node, selector, type, function(e){
+	// 	e.target.classList.toggle('active');
+	// 	_this.scope[callback].call(_this.scope, node);
+	// }, (capture === 'true'));
 };
 
 
 Control.prototype.radio = function(node, selector, type, callback, capture) {
-	var _this = this;
-	events.bind(node, selector, type, function(e){
-		//it seems there is a memory leak
-		var target = e.target;;
-		if(_this.current !== target && _this.current) _this.current.classList.remove('active');
-		target.classList.add('active');
-		_this.current = target;
-		_this.scope[callback].call(_this.scope, node);
-	}, (capture === 'true'));
+	// var _this = this;
+	// events.bind(node, selector, type, function(e){
+	// 	//it seems there is a memory leak
+	// 	var target = e.target;;
+	// 	if(_this.current !== target && _this.current) _this.current.classList.remove('active');
+	// 	target.classList.add('active');
+	// 	_this.current = target;
+	// 	_this.scope[callback].call(_this.scope, node);
+	// }, (capture === 'true'));
+};
+
+Control.prototype.destroy = function() {
+	this.events.destroy();
 };
 
