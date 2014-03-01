@@ -26,5 +26,12 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/bredele/control-brick/issues"
+  },
+  "browser" : {
+    "classes" : "component-classes"
+  },
+  "dependencies": {
+    "events-brick": "~0.1.1",
+    "component-classes": "~1.2.1"
   }
 }
