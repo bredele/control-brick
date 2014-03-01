@@ -23,7 +23,7 @@ Control.prototype.toggle = function(node, selector, type, callback, capture) {
 	events.bind(node, selector, type, function(e){
 		e.target.classList.toggle('active');
 		_this.scope[callback].call(_this.scope, node);
-	}, (capture === true));
+	}, (capture === 'true'));
 };
 
 
@@ -36,6 +36,6 @@ Control.prototype.radio = function(node, selector, type, callback, capture) {
 		target.classList.add('active');
 		_this.current = target;
 		_this.scope[callback].call(_this.scope, node);
-	}, (capture === true));
+	}, (capture === 'true'));
 };
 

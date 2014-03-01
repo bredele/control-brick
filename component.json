@@ -1,15 +1,14 @@
 {
-  "name": "control-plugin",
-  "repo": "bredele/control-plugin",
+  "name": "control-brick",
+  "repo": "bredele/control-brick",
   "description": "",
   "version": "0.0.1",
   "keywords": [],
   "dependencies": {
-    "component/delegate": "*"
+    "bredele/events-brick": "*"
   },
   "development": {
-    "bredele/view" : "*",
-    "bredele/store" : "*"
+    "bredele/lego" : "*"
   },
   "license": "MIT",
   "main": "index.js",
