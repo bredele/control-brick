@@ -1,7 +1,7 @@
 {
   "name": "control-brick",
   "version": "0.0.1",
-  "description": "Lego plugin to toggle or radio any dom element",
+  "description": "Brick plugin to toggle or radio any dom element",
   "main": "index.js",
   "directories": {
     "example": "example"
@@ -14,7 +14,6 @@
     "url": "git://github.com/bredele/control-brick.git"
   },
   "keywords": [
-    "lego",
     "brick",
     "mvvm",
     "mvc",

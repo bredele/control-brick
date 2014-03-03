@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Control plugin</title>
 	<style>
-	  .btn, .teacher, .lego {
+	  .btn, .teacher, .brick {
 	  	cursor:pointer;
 	  }
 	  
@@ -42,7 +42,7 @@
 		<li class="student">Student</li>
 	</ul>
 	<h4>Click on 'Lego'</h4>
-	<ul data-control="toggle:click .lego, orange popup">
+	<ul data-control="toggle:click .brick, orange popup">
 		<li class="lego">lego</li>
 		<li class="lego">lego</li>
 		<li class="bredele">bredele</li>
@@ -51,10 +51,16 @@
 		<li class="lego">lego</li>
 		<li class="bredele">bredele</li>
 	</ul>
+	<h4>Without any callback</h4>
+	<div class="toolbar" data-control="radio:click .btn">
+		<div class="btn">button 1</div>
+		<div class="btn">button 2</div>
+		<div class="btn">button 3</div>				
+	</div>
 	<script src="../build/build.js"></script>
 	<script>
-	  var lego = require('lego');
-	  var view = lego(document.body);
+	  var brick = require('brick');
+	  var view = brick(document.body);
 
 	  var controller = require('control-brick')({
 	    	popup: function() {
@@ -62,7 +68,7 @@
 	    	}
 	    });
 
-	  lego(document.body)
+	  brick(document.body)
 	    .add('data-control', controller)
 	    .build();
 	</script>

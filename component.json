@@ -9,7 +9,7 @@
     "component/classes" : "*"
   },
   "development": {
-    "bredele/lego" : "*"
+    "bredele/brick" : "*"
   },
   "license": "MIT",
   "main": "index.js",

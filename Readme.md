@@ -1,6 +1,6 @@
 # control-brick
 
-  [Lego](https://github.com/bredele/lego) plugin to toggle or radio any dom elements. Useful to create
+  [Brick](https://github.com/bredele/brick) plugin to toggle or radio any dom elements. Useful to create
   tab-based navigation bar, toolbar, etc. 
 
 ## Installation
@@ -15,7 +15,7 @@ with [nodejs](http://nodejs.org):
 
 ## Usage
 
-First, add the plugin to your view (see [lego](https://github.com/bredele/lego) to know more about views):
+First, add the plugin to your view (see [brick](https://github.com/bredele/brick) to know more about views):
 
 ```js
 var controller = require('control-brick')({
